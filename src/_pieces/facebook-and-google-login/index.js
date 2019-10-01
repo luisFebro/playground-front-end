@@ -27,7 +27,7 @@ export default function Main() {
       });
     }
 
-    const componentClicked = () => console.log("clicked");
+    const componentClicked = () => console.log(process.env.REACT_APP_SOCIAL_FACEBOOK);
 
     let fbContent;
 
@@ -55,7 +55,7 @@ export default function Main() {
                     Email: {data.email}
                 </div> :
                 <FacebookLogin
-                    appId={process.env.REACT_APP_SOCIAL_FACEBOOK}
+                    appId=""
                     autoLoad={true}
                     fields="name,email,picture"
                     callback={responseFacebook}
