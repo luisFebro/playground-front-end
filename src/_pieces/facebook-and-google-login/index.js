@@ -64,7 +64,7 @@ export default function Main() {
                 </div> :
                 <FacebookLogin
                     appId={process.env.REACT_APP_SOCIAL_FACEBOOK}
-                    autoLoad={true}
+                    autoLoad={false}
                     fields="name,email,picture"
                     callback={responseFacebook}
                 />
