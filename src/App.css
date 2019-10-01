@@ -1,22 +1,245 @@
-.App {
-  text-align: center;
+:root {
+    --mainRed: #ed213a;
+    --lightRed: #ed213a;
+    /* change */
+    --mainWhite: #f3f3f3;
+    --mainDark: #232528;
+    --mainDegrade: linear-gradient(to right, #ed213a, #93291e);
+    --mainYellow: #ffa400;
+    /*temp*/
+    --mainBlue: #2a2a72;
+    --lightBlue: #009ffd;
 }
 
-.App-logo {
-  height: 40vmin;
+* {
+    box-sizing: border-box;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/*Preventing the scrollbar to disappear in mobile apps*/
+html,
+body {
+    margin: 0;
+    height: 100%;
 }
 
-.App-link {
-  color: #09d3ac;
+/*End Preventing the scrollbar to disappear in mobile apps*/
+
+body {
+    background: var(--mainWhite) !important;
+    color: var(--mainDark) !important;
+    user-select: none;
 }
+
+a {
+    color: var(--mainRed) !important;
+}
+
+footer {
+    background: var(--mainRed);
+    color: var(--mainWhite);
+}
+.main-title {
+    text-align: center;
+}
+.warning {
+    position: fixed;
+    bottom: 5px;
+    left: 5px;
+}
+
+.no-outline:focus {
+    outline: none;
+}
+
+.text-slogon {
+    font: bolder 2.4em 'Indie Flower';
+    letter-spacing: .1em;
+}
+
+.text-categories {
+    font: bolder 5em 'Indie Flower', cursive;
+}
+
+.text-slogon span {
+    font-size: 1.5em;
+}
+
+.text-sub-title {
+    font: normal 2.1rem 'Lato', sans-serif;
+    text-transform: uppercase;
+}
+
+.text-nav-items,
+.text-main-container,
+.text-title {
+    font: normal 1.7rem 'Cabin', sans-serif;
+    margin: 0;
+}
+
+.text-product-title {
+    font: normal 1.3rem 'Cabin', sans-serif;
+}
+
+.text-default {
+    font-family: 'Cabin', sans-serif;
+}
+
+.text-red {
+    color: var(--mainRed);
+}
+
+.text-yellow {
+    color: var(--mainYellow);
+}
+
+.text-white {
+    color: var(--mainWhite);
+}
+
+.text-light {
+    color: var(--lightBlue);
+}
+
+/*PICTURES*/
+.shadow-elevation {
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.20), 0 15px 12px rgba(0, 0, 0, 0.12);
+}
+
+/*CART BUTTON*/
+.btn-black {
+    background: transparent;
+    text-transform: capitalize;
+    font-size: 1.1rem !important;
+    color: var(--mainDark);
+    border-radius: 0 !important;
+    border: .1rem solid var(--mainDark) !important;
+}
+
+.btn-black:hover {
+    cursor: pointer;
+    background: var(--mainDark) !important;
+    color: var(--mainWhite) !important;
+}
+
+.cart-icon {
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: var(--mainYellow);
+}
+
+/*BACKDROPS*/
+.backdrop-strong {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, .8);
+    z-index: 989;
+}
+
+.backdrop-medium {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, .4);
+    z-index: 989;
+}
+
+/*Z-INDEX*/
+.z-index-top {
+    z-index: 999;
+}
+
+.z-index-top2 {
+    z-index: 989;
+}
+
+/*MAIN SHADOW AND HOVER*/
+.main-letters-shadow {
+    font-size: 1.9rem;
+    filter: drop-shadow(.001em .1em .1em var(--mainDark));
+}
+
+.main-letters-shadow:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(.001em .1em .1em var(--mainYellow));
+}
+
+/*END MAIN SHADOW AND HOVER*/
+
+/*ICON DEFAULT*/
+.icon-default {
+    color: var(--mainWhite);
+    cursor: pointer;
+    font-size: 2.1rem;
+    filter: drop-shadow(0.001em 0.1em 0.1em var(--mainDark));
+}
+
+.icon-default:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0.001em 0.1em 0.1em var(--mainYellow));
+}
+
+/*END ICON DEFAULT*/
+
+
+/*MENU DROPDOWN*/
+.btn {
+    text-decoration: none;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+.btn-icon {
+    width: 15px;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.btn-txt {
+    color: var(--mainWhite);
+    padding-left: 10px;
+    vertical-align: middle;
+}
+
+.menu-btn {
+    padding: 12px 15px;
+    display: inline-block;
+}
+
+.menu-btn:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+}
+
+.login-btn {
+    padding: 5px 20px;
+    border-radius: 3px;
+}
+
+.menu-bar {
+    overflow: hidden;
+    background-color: var(--primary-red);
+    box-shadow: -5px -7px 15px 1px rgba(0, 0, 0, 0.8);
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+.disabled {
+    pointer-events: none;
+}
+
+.app-icon-container {
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    font-size: 1.5rem;
+    border-radius: 50%;
+}
+
+/*END MENU DROPDOWN*/
