@@ -13,6 +13,14 @@ export default function Main() {
     const [data, setData] = stateData;
     const responseGoogle = (response) => {
       console.log(response);
+      // setData({
+      //   isLoggedIn: true,
+      //   userID: response.userID,
+      //   name: response.name,
+      //   email: response.email,
+      //   picture: response.picture.data.url,
+
+      // });
     }
 
     const responseFacebook = (response) => {
@@ -55,7 +63,7 @@ export default function Main() {
                     Email: {data.email}
                 </div> :
                 <FacebookLogin
-                    appId=""
+                    appId={process.env.REACT_APP_SOCIAL_FACEBOOK}
                     autoLoad={true}
                     fields="name,email,picture"
                     callback={responseFacebook}
