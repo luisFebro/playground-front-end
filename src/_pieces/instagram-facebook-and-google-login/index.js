@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import FacebookLogin from 'react-facebook-login';
 import GoogleLogin from 'react-google-login';
+import InstagramLogin from 'react-instagram-login';
 
 export default function Main() {
     const stateData = useState({
@@ -35,6 +36,10 @@ export default function Main() {
       });
     }
 
+    const responseInstagram = (response) => {
+      console.log(response);
+    }
+
     const componentClicked = () => console.log(process.env.REACT_APP_SOCIAL_FACEBOOK);
 
     let fbContent;
@@ -47,6 +52,12 @@ export default function Main() {
                 onSuccess={responseGoogle}
                 onFailure={responseGoogle}
                 cookiePolicy={'single_host_origin'}
+            />
+            <InstagramLogin
+              clientId={process.env.REACT_APP_SOCIAL_INSTAGRAM}
+              buttonText="Enter with Insta"
+              onSuccess={responseInstagram}
+              onFailure={responseInstagram}
             />
             {data.isLoggedIn ?
                 <div style={{
