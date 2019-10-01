@@ -34,13 +34,12 @@ export default function Main() {
     return (
         <div>
             <GoogleLogin
-                clientId="277141363321-111hj0b4ofd587ccdhngbk5suamqf2de.apps.googleusercontent.com"
+                clientId={process.env.REACT_APP_SOCIAL_GOOGLE}
                 buttonText="Login"
                 onSuccess={responseGoogle}
                 onFailure={responseGoogle}
                 cookiePolicy={'single_host_origin'}
             />
-
             {data.isLoggedIn ?
                 <div style={{
                     display: 'flex',
@@ -56,7 +55,7 @@ export default function Main() {
                     Email: {data.email}
                 </div> :
                 <FacebookLogin
-                    appId="518718278957270"
+                    appId={process.env.REACT_APP_SOCIAL_FACEBOOK}
                     autoLoad={true}
                     fields="name,email,picture"
                     callback={responseFacebook}
