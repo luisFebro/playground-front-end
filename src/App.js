@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import './App.css';
-import Main from './_pieces/instagram-facebook-and-google-login/'
+import Main from './_pieces'
 
 function App() {
   return (
